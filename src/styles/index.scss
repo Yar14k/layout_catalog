@@ -6,18 +6,21 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+$color-text: #060b35;
+$color-accent: #00acdc;
+
 /* #region header */
 .nav__link {
   height: 100%;
   display: flex;
   text-decoration: none;
-  color: #060b35;
+  color: $color-text;
   font-size: 12px;
   line-height: 14.6px;
   text-align: center;
   padding: 0;
   white-space: nowrap;
-  transition: color 0.2s;
+  transition: color 300ms;
   cursor: pointer;
   align-items: center;
 }
@@ -46,7 +49,7 @@ body {
   padding-inline: 50px;
 }
 
-.logo img {
+.logo__image {
   width: 40px;
   height: 40px;
   display: block;
@@ -86,7 +89,7 @@ nav ul {
   bottom: 0;
   width: 100%;
   height: 4px;
-  background: #00acdc;
+  background: $color-accent;
   border-radius: 4px;
 }
 
@@ -107,23 +110,25 @@ nav ul {
 
 .card-catalog {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(var(--column-count), minmax(200px, 200px));
   gap: 48px 46px;
   padding: 50px 40px;
   overflow: visible;
   transition: 300ms;
   transform-origin: center;
+  justify-content: center;
+  place-items: center;
 
   @media (min-width: 488px) {
-    grid-template-columns: repeat(2, 1fr);
+    --column-count: 2;
   }
 
   @media (min-width: 768px) {
-    grid-template-columns: repeat(3, 1fr);
+    --column-count: 3;
   }
 
   @media (min-width: 1024px) {
-    grid-template-columns: repeat(4, 1fr);
+    --column-count: 4;
   }
 }
 
@@ -159,7 +164,7 @@ nav ul {
   font-weight: 500;
   font-size: 12px;
   line-height: 150%;
-  color: #060b35;
+  color: $color-text;
   margin-top: 0;
   margin-bottom: 4px;
 }
@@ -194,7 +199,6 @@ nav ul {
   height: 16px;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
   background-color: transparent;
 }
 
@@ -207,11 +211,11 @@ nav ul {
 }
 
 /* #endregion stars */
-.card__stars-review-review {
+.card__reviews {
   font-weight: 400;
   font-size: 10px;
   line-height: 140%;
-  color: #060b35;
+  color: $color-text;
   text-align: right;
   margin: 0;
 }
@@ -236,7 +240,7 @@ nav ul {
   font-weight: 700;
   font-size: 16px;
   line-height: 112%;
-  color: #060b35;
+  color: $color-text;
   margin: 0;
 }
 
@@ -260,7 +264,7 @@ nav ul {
   display: flex;
   width: 166px;
   height: 40px;
-  background-color: #00acdc;
+  background-color: $color-accent;
   justify-content: center;
   align-items: center;
   border-radius: 5px;
